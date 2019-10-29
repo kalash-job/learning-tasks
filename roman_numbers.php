@@ -1,35 +1,41 @@
 <?php
+
+function getRomanNumberElements($unit, $fiver, $ten, $number)
+{
+  if($number === 9) {
+    return $unit . $ten;
+  } elseif($number > 4) {
+    return $fiver . str_repeat($unit, $number - 5);
+  } elseif($number === 4) {
+    return $unit . $fiver;
+  } else {
+    return $unit . str_repeat($unit, $number - 1);
+  }
+}
+
 function translateToRomanNumbers ($arabicNumber)
 {
-  $thousands = intdiv($arabicNumber, 1000);
-  $romanNumber = str_repeat('M', $thousands);
-  $arabicNumber -= $thousands * 1000;
-  $fivehundreds = intdiv($arabicNumber, 500);
-  $romanNumber .= str_repeat('D', $fivehundreds);
-  $arabicNumber -= $fivehundreds * 500;
-  $hundreds = intdiv($arabicNumber, 100);
-  $romanNumber .= str_repeat('C', $hundreds);
-  $arabicNumber -= $hundreds * 100;
-  $fifties = intdiv($arabicNumber, 50);
-  $romanNumber .= str_repeat('L', $fifties);
-  $arabicNumber -= $fifties * 50;
-  $tens = intdiv($arabicNumber, 10);
-  $romanNumber .= str_repeat('X', $tens);
-  $arabicNumber -= $tens * 10;
-  if($arabicNumber === 9) {
-$romanNumber .= 'IX';
-$arabicNumber -= 9;
-  } elseif($arabicNumber >= 5) {
-    $romanNumber .= 'V';
-    $arabicNumber -= 5;
+  $romanNumber = '';
+  if($arabicNumber > 999) {
+    $numberOfThousands = intdiv($arabicNumber, 1000);
+    $romanNumber .= getRomanNumberElements('M', '', '', $numberOfThousands);
+    $arabicNumber -= $numberOfThousands * 1000;
   }
-  if($arabicNumber === 4) {
-    $romanNumber .= 'IV';
-  } else {
-    $ones = intdiv($arabicNumber, 1);
-    $romanNumber .= str_repeat('I', $ones);
+  if($arabicNumber > 99) {
+    $numberOfHundreds = intdiv($arabicNumber, 100);
+    $romanNumber .= getRomanNumberElements('C', 'D', 'M', $numberOfHundreds);
+    $arabicNumber -= $numberOfHundreds * 100;
+  }
+  if($arabicNumber > 9) {
+    $numberOfTens = intdiv($arabicNumber, 10);
+    $romanNumber .= getRomanNumberElements('X', 'L', 'C', $numberOfTens);
+    $arabicNumber -= $numberOfTens * 10;
+  }
+    if($arabicNumber > 0) {
+    $romanNumber .= getRomanNumberElements('I', 'V', 'X', $arabicNumber);
   }
   return $romanNumber;
 }
-$arabicNumber = 3867;
+
+$arabicNumber = 3444;
 print_r(translateToRomanNumbers($arabicNumber));
