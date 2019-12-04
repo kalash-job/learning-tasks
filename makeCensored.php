@@ -10,14 +10,8 @@ function makeCensored(string $sentence, array $censoredWords)
     }
     $sentenceArray = explode(' ', $sentence);
     $newSentenceArray = [];
-    foreach ($censoredWords as $numberOfWord => $word) {
-        foreach ($sentenceArray as $index => $partOfSentence) {
-            if ($numberOfWord >= 1) {
-                $newSentenceArray[$index] = $word === $partOfSentence ? '$#%!' : $newSentenceArray[$index];
-            } else {
-                $newSentenceArray[$index] = $word === $partOfSentence ? '$#%!' : $partOfSentence;
-            }
-        }
+    foreach ($sentenceArray as $word) {
+        $newSentenceArray[] = in_array($word, $censoredWords) ? '$#%!' : $word;
     }
     return implode(' ', $newSentenceArray);
 }
