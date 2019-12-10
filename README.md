@@ -100,3 +100,8 @@ bubbleSort.php
 checkIfBalanced.php
 
 Реализуйте функцию checkIfBalanced, которая проверяет балансировку круглых скобок в арифметических выражениях.
+
+
+getIntersectionOfSortedArray.php
+Реализуйте функцию getIntersectionOfSortedArray, которая принимает на вход два отсортированных массива и находит 
+их пересечение.
