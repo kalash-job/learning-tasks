@@ -149,3 +149,9 @@ summaryRanges.php
 hammingWeight.php
 
 Реализуйте функцию hammingWeight, которая считает вес Хэмминга числа.
+
+
+compareVersion.php
+
+Реализуйте функцию compareVersion, которая сравнивает переданные версии version1 и version2. Если version1 > 
+version2, то функция должна вернуть 1, если version1 < version2, то - -1, если же version1 = version2, то - 0.
