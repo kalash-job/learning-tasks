@@ -162,3 +162,10 @@ longestLength.php
 Реализуйте функцию longestLength принимающую на вход строку и возвращающую длину максимальной последовательности 
 из неповторяющихся символов. Подстрока может состоять из одного символа. Например в строке qweqrty, можно 
 выделить следующие подстроки: qwe, weqrty. Самой длинной будет weqrty.
+
+
+rowSumOddNumbers.php
+
+Sum of odd numbers
+Given the triangle of consecutive odd numbers:               1           3     5        7     9    11    13    15    17    19 21    23    25    27    29 ...  Calculate the row sums of this triangle from the row index (starting at 
+index 1) e.g.:  rowSumOddNumbers(1); // 1 rowSumOddNumbers(2); // 3 + 5 = 8
