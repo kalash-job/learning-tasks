@@ -174,3 +174,19 @@ rowSumOddNumbers.php
 Sum of odd numbers
 Given the triangle of consecutive odd numbers:               1           3     5        7     9    11    13    15    17    19 21    23    25    27    29 ...  Calculate the row sums of this triangle from the row index (starting at 
 index 1) e.g.:  rowSumOddNumbers(1); // 1 rowSumOddNumbers(2); // 3 + 5 = 8
+
+
+Evenorodd.php
+
+Task:
+
+Given an vector of numbers, determine whether the sum of all of the numbers is odd or even.
+
+Give your answer as a String matching 'odd' or 'even'.
+
+If the input array is empty consider it as: [0] (array with a zero).
+Example:
+
+odd_or_even(vec![0]) returns "even"
+odd_or_even(vec![0, 1, 4]) returns "odd"
+odd_or_even(vec![0, -1, -5]) returns "even"
