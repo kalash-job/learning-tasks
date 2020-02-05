@@ -320,7 +320,6 @@ sayPrimeOrNot.php
 Реализуйте функцию sayPrimeOrNot, которая проверяет переданное число на простоту и печатает на экран yes или no.
 Примеры использования
 
-<?php
 sayPrimeOrNot(5); // yes
 sayPrimeOrNot(4); // no
 
