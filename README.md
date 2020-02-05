@@ -279,7 +279,6 @@ buildQueryString.php
 Реализуйте функцию buildQueryString, которая принимает на вход список параметров и возвращает сформированный 
 query string из этих параметров:
 
-<?php
 
 buildQueryString(['per' => 10, 'page' => 1 ]);
 // → page=1&per=10
@@ -353,7 +352,6 @@ slugify.php
 
 Функция, выполняющая трансляцию текста в слаг, есть и в библиотеке Funct:
 
-<?php
 
 \Funct\Strings\slugify('Global Thermonuclear Warfare'); // 'global-thermonuclear-warfare'
 \Funct\Strings\slugify('Crème brûlée'); // 'creme-brulee'
